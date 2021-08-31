@@ -19,11 +19,21 @@ describe('Game', () => {
     expect(reGame.dice).toEqual("Roll the dice!")
   });
 
+  // tests the dice value is correct
   test('should display number between 1-6', () =>{
     reGame.roll();
     expect(reGame.dice).toBeGreaterThan(0);
     expect(reGame.dice).toBeLessThan(7);
   });
+
+  test('should change active score to 0 if 1 is rolled', () => {
+    reGame.activeScore = 10
+    reGame.roll();
+    if (reGame.dice ===1){
+      expect(reGame.activeScore).toEqual(0)
+    }
+    expect(reGame.activeScore).toEqual(10 + reGame.dice)
+  })
 
   // tests changing from player 2 to player 1
   test('Should change the active player between player 1 and player 2', () =>{
