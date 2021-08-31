@@ -28,6 +28,12 @@ describe('Game', () => {
   test('Should change the active player between player 1 and player 2', () =>{
     reGame.turn = true
     reGame.changeTurn();
-    expect(reGame.activePlayer).toEqual("player2")
+    expect(reGame.activePlayer).toEqual("player1")
+  })
+
+  test('Should change the active player between player 1 and player 2', () =>{
+    reGame.turn = false
+    reGame.changeTurn();
+    expect(reGame.activePlayer).toEqual("player1")
   })
 });
