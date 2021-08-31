@@ -24,4 +24,10 @@ describe('Game', () => {
     expect(reGame.dice).toBeGreaterThan(0);
     expect(reGame.dice).toBeLessThan(7);
   });
+
+  test('Should change the active player between player 1 and player 2', () =>{
+    reGame.turn = true
+    reGame.changeTurn();
+    expect(reGame.activePlayer).toEqual("player2")
+  })
 });
