@@ -44,6 +44,13 @@ describe('Game', () => {
     reGame.activeScore = 10;
     reGame.turn = false;
     reGame.hold();
-    expect(reGame.score.player1).toEqual(0)
+    expect(reGame.score.player1).toEqual(10)
+  })
+  // Adding score to player 2
+  test('should add active score to player score',() => {
+    reGame.activeScore = 10;
+    reGame.turn = true;
+    reGame.hold();
+    expect(reGame.score.player1).toEqual(10)
   })
 });
