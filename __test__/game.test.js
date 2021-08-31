@@ -25,15 +25,25 @@ describe('Game', () => {
     expect(reGame.dice).toBeLessThan(7);
   });
 
+  // tests changing from player 2 to player 1
   test('Should change the active player between player 1 and player 2', () =>{
     reGame.turn = true
     reGame.changeTurn();
     expect(reGame.activePlayer).toEqual("player1")
   })
 
+  // tests changing from player 1 to player 2
   test('Should change the active player between player 1 and player 2', () =>{
     reGame.turn = false
     reGame.changeTurn();
-    expect(reGame.activePlayer).toEqual("player1")
+    expect(reGame.activePlayer).toEqual("player2")
+  })
+
+  // Adding score to player 1
+  test('should add activeScore to player score', () => {
+    reGame.activeScore = 10;
+    reGame.turn = false;
+    reGame.hold();
+    expect(reGame.score.player1).toEqual(0)
   })
 });
