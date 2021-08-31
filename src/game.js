@@ -51,7 +51,6 @@ Game.prototype.winCheck = function () {
     return "win";
   }
   else {
-    console.log("game continues");
     return "continue";
   }
 };
