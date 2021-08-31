@@ -53,4 +53,12 @@ describe('Game', () => {
     reGame.hold();
     expect(reGame.score.player2).toEqual(10)
   })
+
+  // winCheck player 1 win
+  test('should correctly determine the active player wins', () => {
+    reGame.activePlayer = "player1"
+    reGame.activeScore = 20
+    reGame.score[reGame.activePlayer] = 20
+    expect(reGame.winCheck()).toEqual("win")
+  })
 });
