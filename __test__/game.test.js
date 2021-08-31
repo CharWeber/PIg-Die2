@@ -51,6 +51,6 @@ describe('Game', () => {
     reGame.activeScore = 10;
     reGame.turn = true;
     reGame.hold();
-    expect(reGame.score.player1).toEqual(10)
+    expect(reGame.score.player2).toEqual(10)
   })
 });
